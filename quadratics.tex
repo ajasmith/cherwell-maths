@@ -1,0 +1,154 @@
+% Example presentation using cherwellmaths class
+% Build with: build.bat example
+\documentclass{cherwellmaths}
+
+\title{Introduction to Quadratics}
+\subtitle{Year 10 Mathematics}
+\author{A. Teacher}
+
+\begin{document}
+
+\section{What is a Quadratic?}
+
+\begin{frame}{General Form}
+  \begin{defn}{Quadratic Function}{quad}
+    A \emph{quadratic function} has the form
+    \[
+      f(x) = ax^2 + bx + c, \quad a \neq 0.
+    \]
+  \end{defn}
+
+  \pause
+  Key features:
+  \begin{itemize}
+    \item Parabola shape (opens up if $a > 0$, down if $a < 0$)
+    \item Vertex (turning point)
+    \item Axis of symmetry at $x = -\dfrac{b}{2a}$
+  \end{itemize}
+\end{frame}
+
+\section{Solving Quadratics}
+
+\begin{frame}{The Quadratic Formula}
+  \begin{thm*}{Quadratic Formula}{qf}
+    If $ax^2 + bx + c = 0$ with $a \neq 0$, then
+    \[
+      x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+    \]
+  \end{thm*}
+
+  \pause
+  \begin{exmp}{Solve $x^2 - 5x + 6 = 0$}{ex1}
+    Here $a=1$, $b=-5$, $c=6$.
+    \[
+      x = \frac{5 \pm \sqrt{25 - 24}}{2} = \frac{5 \pm 1}{2}
+    \]
+    So $x = 3$ or $x = 2$.
+  \end{exmp}
+\end{frame}
+
+\section{Graphing}
+
+\begin{frame}{Graph of $y = x^2 - 5x + 6$}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines=middle,
+      xlabel=$x$, ylabel=$y$,
+      xmin=-1, xmax=6, ymin=-2, ymax=7,
+      width=\slidesquare,
+      height=0.8\slidesquare,
+      grid=major,
+    ]
+      \addplot[domain=-0.5:5.5, samples=80, thick, color=cherwellaccent]{x^2 - 5*x + 6};
+      \addplot[only marks, mark=*, color=cherwellblack] coordinates {(2,0)(3,0)(2.5,-0.25)};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\section{Side-by-Side Demo}
+
+\begin{frame}{Graph with Key Points}
+  \sidebyside{%
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines=middle,
+        xlabel=$x$, ylabel=$y$,
+        xmin=-1, xmax=6, ymin=-2, ymax=7,
+        width=\slidesquare,
+        height=\slidesquare,
+        grid=major,
+      ]
+        \addplot[domain=-0.5:5.5, samples=80, thick, color=cherwellaccent]{x^2 - 5*x + 6};
+      \end{axis}
+    \end{tikzpicture}
+  }{%
+    Key features of $y = x^2 - 5x + 6$:
+    \begin{itemize}
+      \item Roots at $x = 2$ and $x = 3$
+      \item Vertex at $(2.5,\, -0.25)$
+      \item Opens upward ($a > 0$)
+      \item $y$-intercept at $(0, 6)$
+    \end{itemize}
+  }
+\end{frame}
+
+\begin{frame}{Key Points with Graph}
+  \sidebyside{%
+    To factorise $x^2 - 5x + 6$:
+    \begin{itemize}
+      \item Find two numbers that multiply to $6$
+      \item \ldots and add to $-5$
+      \item $-2 \times -3 = 6$ \checkmark
+      \item $-2 + (-3) = -5$ \checkmark
+      \item So $y = (x-2)(x-3)$
+    \end{itemize}
+  }{%
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines=middle,
+        xlabel=$x$, ylabel=$y$,
+        xmin=-1, xmax=6, ymin=-2, ymax=7,
+        width=\slidesquare,
+        height=\slidesquare,
+        grid=major,
+      ]
+        \addplot[domain=-0.5:5.5, samples=80, thick, color=cherwellaccent]{x^2 - 5*x + 6};
+      \end{axis}
+    \end{tikzpicture}
+  }
+\end{frame}
+
+\section{Incremental Reveal Demo}
+
+\begin{frame}{Building Up a Solution}
+  Solve $x^2 - 4x + 3 = 0$ by factorising:
+
+  \pause
+  \textbf{Step 1:} Find two numbers that multiply to $3$ and add to $-4$.
+
+  \pause
+  \textbf{Step 2:} The numbers are $-1$ and $-3$.
+
+  \pause
+  \textbf{Step 3:} Write the factorised form:
+  \[
+    (x - 1)(x - 3) = 0
+  \]
+
+  \pause
+  \textbf{Step 4:} So $x = 1$ or $x = 3$.
+\end{frame}
+
+\begin{frame}{Revealing Bullet Points One by One}
+  Properties of quadratic graphs:
+  \begin{itemize}[<+->]
+    \item Always a parabola
+    \item Exactly one turning point (vertex)
+    \item Axis of symmetry passes through the vertex
+    \item At most two $x$-intercepts
+    \item Exactly one $y$-intercept
+  \end{itemize}
+\end{frame}
+
+\end{document}
