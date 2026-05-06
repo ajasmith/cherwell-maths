@@ -34,6 +34,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{tcolorbox}
 \tcbuselibrary{theorems,skins,breakable}
+\RequirePackage{transparent}
 
 % --- Beamer theme setup ---
 \usetheme{Madrid}
@@ -62,7 +63,7 @@
 \setbeamercolor{palette tertiary}{fg=cherwellwhite,bg=cherwellblack}
 
 % Swan logo centered below author on title page
-\addtobeamertemplate{title page}{}{\begin{center}\includegraphics[height=5cm]{cherwellswan}\end{center}}
+\addtobeamertemplate{title page}{}{\begin{center}\includegraphics[height=5cm]{swan.pdf}\end{center}}
 \addtobeamertemplate{title page}{}{\addtocounter{framenumber}{-1}}
 
 % --- Branding ---
@@ -81,7 +82,7 @@
 
   % Background image (aligned to bottom, maintain aspect ratio, cropped)
   \setbeamertemplate{background}{%
-   \includegraphics[width=\paperwidth]{cherwellswanoverlay}
+   \transparent{0.025}{\includegraphics[width=\paperwidth]{swan.pdf}}
   }
 
   % Banner in the top-right corner
@@ -99,7 +100,7 @@
     \hfill
     \begin{minipage}[b]{4cm}
       \centering
-      \hyperlink{toc}{\includegraphics[height=1.5cm]{cherwellswan}}\\[2pt]
+      \hyperlink{toc}{\includegraphics[height=1.5cm]{swan.pdf}}\\[2pt]
       \usebeamerfont{frame number}\insertframenumber/\inserttotalframenumber
     \end{minipage}%
     \hspace{0mm}\vspace{\cherwellpadding}\par
